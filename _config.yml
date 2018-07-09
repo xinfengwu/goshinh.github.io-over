@@ -80,7 +80,16 @@ theme: next2
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: https://github.com/goshinh/goshinh.github.io
   branch: master
   message: 
+  # other deployer
+- type: leancloud_counter_security_sync
+
+leancloud_counter_security:
+  enable_sync: true
+  app_id: kSadG0xpLGSjhpwKLPmLOEkk-gzGzoHsz
+  app_key: 757TcVDCXDdLEl3xtF3i7orG
+  username: jiller
+  password: jiller
