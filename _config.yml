@@ -4,7 +4,7 @@
 
 # Site
 title: IT达摩院
-subtitle:
+subtitle: 不忘初心 向上生长
 description: 好学僧的博客
 author: 好学僧
 language: zh-Hans
@@ -73,6 +73,9 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next2
+## sitemap插件
+#plugins:
+#- hexo-generator-sitemap
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
