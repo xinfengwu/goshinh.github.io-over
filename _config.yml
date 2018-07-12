@@ -5,16 +5,16 @@
 # Site
 title: IT达摩院
 subtitle: 不忘初心 向上生长
-description: 好学僧的博客
+description: 热的裤衩都不想穿了
 author: 好学僧
-language: zh-Hans
+language: zh-CN # 这里NexT用zh-Hans会显示他国语言
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: www.itdamo.org
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:title/ / # 文章url命名格式
 permalink_defaults:
 
 # Directory
@@ -25,7 +25,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: # 不渲染source/aaa/bbb文件，可使用通配符*
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next2
+theme: next2 # 改变主题
 ## sitemap插件
 #plugins:
 #- hexo-generator-sitemap
@@ -92,4 +92,4 @@ leancloud_counter_security:
   app_id: kSadG0xpLGSjhpwKLPmLOEkk-gzGzoHsz
   app_key: 757TcVDCXDdLEl3xtF3i7orG
   username: jiller
-  password: jiller
+  password: 
