@@ -84,7 +84,14 @@ deploy:
   repo: https://github.com/goshinh/goshinh.github.io
   branch: master
   message: 
-  # other deployer
+#- type: git
+#  repo: https://github.com/goshinh/goshinh.github.io
+#  branch: src
+#  extend_dirs: /
+#    ignore_hidden: false
+#    ignore_pattern:
+#       public: .
+# other deployer
 - type: leancloud_counter_security_sync
 
 leancloud_counter_security:
