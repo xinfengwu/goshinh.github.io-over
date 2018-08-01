@@ -1,5 +1,5 @@
 ---
-title: 互联网时代，再小的个体也应该有自己的“家”
+title: 从零开始，在互联网上，搭建一个自己的“家”
 date: 2018-07-14 20:39:41
 tags:
 - hexo
@@ -20,6 +20,8 @@ tags:
 - github Pages + hexo + theme
 
 之前建的网站，因不满意，全给下线了。最后剩下这个[IT达摩院](www.itdamo.org)，这个网站算是我心目中向往的博客类网站应有的样子。
+
+<!-- more -->
 
 ## Github Pages+ Hexo + Next简介
 

@@ -4,7 +4,7 @@
 
 # Site
 title: IT达摩院
-subtitle: 不忘初心 向上生长
+subtitle: 不忘初心前行 匠心独具辉煌
 description: 热的裤衩都不想穿了
 author: 好学僧
 language: zh-CN # 这里NexT用zh-Hans会显示他国语言
@@ -28,7 +28,7 @@ i18n_dir: :lang
 skip_render: # 不渲染source/aaa/bbb文件，可使用通配符*
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
