@@ -257,32 +257,42 @@ create mode 100644 index.html
 
 如果你的自定义域名是一个[顶端域名](http://wiki.jikexueyuan.com/project/github-pages-basics/custom-domains.html)，你必须配置 `ALIAS` 、`ANAME` 或通过 DNA 提供商配置 `A` 记录，欲了解更多信息，请参见[通过你的DNS提供商配置 `A` 记录的技巧](http://wiki.jikexueyuan.com/project/github-pages-basics/tip-record.html)。
 
-### Hexo侧
+### Hexo配置
 
-Hexo主要负责解析各种文档（大部分场合即是你的博文），部署网站。欲了解更多信息，请参见[Hexo官方说明文档](https://hexo.io/zh-cn/docs/)。
+Hexo主要负责解析各种文档（大部分场合即是你的博文），部署网站。
+Hexo版本：3.7.1
+Node版本：10.6.0
+#### 官方说明文档
 
-#### [IT达摩院](www.itdamo.org)站点配置文件_config.yml示例
+https://hexo.io/docs/configuration.html
 
-```yaml
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+#### 项目开源代码
 
+https://github.com/hexojs/hexo/
+
+打开根目录下的_config.yml文件，开始对Hexo配置：
+#### 基本信息 
+``` yaml
 # Site
-title: IT达摩院
-subtitle: 不忘初心 向上生长
-description: 热的裤衩都不想穿了
-author: 好学僧
+title: # 站点名
+subtitle: # 站点详细描述，一般在这里写你的站点是干什么的
+description: # 对作者的描述
+author: # 作者署名
 language: zh-CN # 这里NexT用zh-Hans会显示他国语言
-timezone:
+timezone: # 时区
+```
+#### URL
 
+``` yaml
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: www.itdamo.org
-root: /
+url: # 站点的URL
+root: / # 站点根目录位置
 permalink: :year/:month/:day/:title/ / # 文章url命名格式
 permalink_defaults:
-
+```
+#### 目录
+``` yaml
 # Directory
 source_dir: source
 public_dir: public
@@ -292,7 +302,9 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render: # 不渲染source/aaa/bbb文件，可使用通配符*
-
+```
+#### 写作
+```yaml
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -300,7 +312,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: true #文章资源文件夹，如果打开，你在用Hexo new创建新一篇新文章时，Hexo会自动创建一个与之文件名相同的文件夹，用于存放与文章相关的资源。
 relative_link: false
 future: true
 highlight:
@@ -308,66 +320,82 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+```
+#### 首页
+```yaml
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
-  order_by: -date
-  
+  per_page: 10 # 每页显示的文章数
+  order_by: -date # 文章排列依据，`-`代表降序
+```
+#### 分类和标签
+```yaml
 # Category & Tag
 default_category: uncategorized
 category_map:
 tag_map:
-
+```
+#### 日期与时间
+```yaml
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-
+```
+#### 翻页
+```yaml
 # Pagination
 ## Set per_page to 0 to disable pagination
 per_page: 10
 pagination_dir: page
+```
+#### 扩展应用
 
+扩展应用包括插件和主题。
+
+```yaml
 # Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: next2 # 改变主题
-## sitemap插件
+## Plugins: https://hexo.io/plugins/ 插件资源
+## Themes: https://hexo.io/themes/ 主题资源
+theme: next # 改变主题
+## sitemap 站点地图
 #plugins:
 #- hexo-generator-sitemap
 
-# Deployment
+# Deployment 部署
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-- type: git
-  repo: https://github.com/goshinh/goshinh.github.io
-  branch: master
+- type: # 类型，如git
+  repo: # 仓库地址
+  branch: # 分支
   message: 
 # other deployer
 - type: leancloud_counter_security_sync
 
 leancloud_counter_security:
   enable_sync: true
-  app_id: kSa********************Hsz
-  app_key: 75********************G
-  username: j***r
+  app_id: 
+  app_key: 
+  username: 
   password: ******* # 不建议将用户名和密码写在配置文件中
 ```
 
-
-
-### NexT侧
+### NexT主题配置
 
 NexT负责网页中各种元素的组织形式和内容的外观样式。欲了解更多信息，请参见[NexT官方说明文档](http://theme-next.iissnan.com/getting-started.html)。
 
-#### [IT达摩院](www.itdamo.org)主题配置文件_config.yml示例
+Next版本：6.3.0
+
+打开next/_config.yml文件，开始对主题配置：
+
+#### 主题核心配置设置
+一般不需要动它，默认即可。
 
 ```yaml
 # ---------------------------------------------------------------
@@ -402,8 +430,10 @@ cache:
   #mixins: source/_data/mixins.styl
   # Default path: source/css/_custom/custom.styl
   #styles: source/_data/styles.styl
-
-
+```
+#### 站点信息设置
+##### 网站图标
+``` yaml
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -423,19 +453,23 @@ favicon:
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
-
+```
+##### RSS
+``` yaml
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.
 # Set rss to specific value if you have burned your feed already.
 rss: /atom.xml
-
-footer: #页脚
+```
+##### 页脚
+``` yaml
+footer: # 页脚
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
   since: 2015
 
   # Icon between year and copyright info.
-  icon:
+  icon: # 图标
     # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
     # `heart` is recommended with animation in red (#ff0000).
     name: heart #user
@@ -445,7 +479,7 @@ footer: #页脚
     color: "#ff0000" #"#808080"
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright:
+  copyright: # 版权
   # -------------------------------------------------------------
   powered:
     # Hexo link (Powered by Hexo).
@@ -461,7 +495,9 @@ footer: #页脚
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://github.com"><b>GitHub</b></a>
-
+```
+#####  设置SEO
+``` yaml
 # ---------------------------------------------------------------
 # SEO Settings
 # ---------------------------------------------------------------
@@ -477,8 +513,9 @@ seo: false
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
 index_with_subtitle: false
-
-
+```
+#### 菜单设置
+``` yaml
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
@@ -502,7 +539,9 @@ menu:
 menu_settings:
   icons: true
   badges: true
-
+```
+#### 主题风格设置
+``` yaml
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -512,8 +551,9 @@ menu_settings:
 #scheme: Mist
 #scheme: Pisces
 scheme: Gemini
-
-
+```
+#### 侧边栏设置
+``` yaml
 # ---------------------------------------------------------------
 # Sidebar Settings
 # ---------------------------------------------------------------
@@ -622,8 +662,9 @@ sidebar:
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
-
-
+```
+#### 文章设置
+``` yaml
 # ---------------------------------------------------------------
 # Post Settings
 # ---------------------------------------------------------------
@@ -712,8 +753,10 @@ post_edit:
   enable: false
   url: https://github.com/theme-next/theme-next.org/_posts/tree/master/ # Link for view source.
 # url: https://github.com/theme-next/theme-next.org/_posts/edit/master/ # Link for fork & edit.
-
-
+```
+#### Misc主题设置
+如果你不用Misc主题，可以跳过此节。
+``` yaml
 # ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
@@ -740,8 +783,10 @@ highlight_theme: normal
 
 # Enable "cheers" for archive page.
 cheers_enabled: true
-
-
+```
+#### 字体设置
+可以跳过，选择默认即可。
+``` yaml
 # ---------------------------------------------------------------
 # Font Settings
 # - Find fonts on Google Fonts (https://www.google.com/fonts)
@@ -796,12 +841,10 @@ font:
     external: true
     family:
     size:
-
-
-# ---------------------------------------------------------------
-# Third Party Services Settings
-# ---------------------------------------------------------------
-
+```
+#### 第三方服务设置
+##### 数学公式
+``` yaml
 # Math Equations Render Support
 math:
   enable: true
@@ -824,7 +867,6 @@ math:
     #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
     # For automatic detect latest version link to MathJax.js and get from Bootcss.
     #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
-
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin)
   # needed to full Katex support.
   katex:
@@ -834,36 +876,24 @@ math:
     #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
     # Bootcss, works great in China, but not so well in other region
     #cdn: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
+```
+##### 汉字支持
 
+``` ymal
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: true
+```
+##### Pangu支持
 
+``` ymal
 # Pangu Support
 # Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
 pangu: true
-
-# Swiftype Search API Key
-#swiftype_key:
-
-# Baidu Analytics ID
-baidu_analytics: 0e6*******************************83
-
-# Disqus
-disqus:
-  enable: false
-  shortname:
-  count: true
-  lazyload: false
-
-# changyan
-changyan:
-  enable: false
-  appid:
-  appkey:
-
-
+```
+##### Leancloud 的极简风评论系统
+``` ymal
 # Valine.一款基于 Leancloud 的极简风评论系统
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
@@ -878,47 +908,9 @@ valine:
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
 
-
-# Support for youyan comments system.
-# You can get your uid from http://www.uyan.cc
-#youyan_uid: your uid
-
-# Support for LiveRe comments system.
-# You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
-
-# Gitment
-# Introduction: https://imsun.net/posts/gitment-introduction/
-gitment:
-  enable: false
-  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
-  count: true # Show comments count in post meta area
-  lazy: false # Comments lazy loading with a button
-  cleanly: false # Hide 'Powered by ...' on footer, and more
-  language: # Force language, or auto switch by theme
-  github_user: # MUST HAVE, Your Github Username
-  github_repo: # MUST HAVE, The name of the repo you use to store Gitment comments
-  client_id: # MUST HAVE, Github client id for the Gitment
-  client_secret: # EITHER this or proxy_gateway, Github access secret token for the Gitment
-  proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
-  redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
-
-# Baidu Share
-# Available value:
-#    button | slide
-# Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
-
-# Share
-# This plugin is more useful in China, make sure you known how to use it.
-# And you can find the use guide at official webiste: http://www.jiathis.com/.
-# Warning: JiaThis does not support https.
-#jiathis:
-  ##uid: Get this uid from http://www.jiathis.com/
-
-#add_this_id:
-
+```
+##### NeedMoreShare2 分享系统
+``` ymal
 # NeedMoreShare2 分享系统
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
 # See: https://github.com/revir/need-more-share2
@@ -946,66 +938,10 @@ needmoreshare2:
       boxForm: horizontal
       position: middleRight
       networks: Weibo,Wechat,Douban,QQZone,Evernote,Twitter,Facebook
+```
 
-# Google Webmaster tools verification setting
-# See: https://www.google.com/webmasters/
-#google_site_verification:
-
-# Google Analytics
-#google_analytics:
-
-# Bing Webmaster tools verification setting
-# See: https://www.bing.com/webmaster/
-#bing_site_verification:
-
-# Yandex Webmaster tools verification setting
-# See: https://webmaster.yandex.ru/
-#yandex_site_verification:
-
-# CNZZ count
-#cnzz_siteid:
-
-# Application Insights
-# See https://azure.microsoft.com/en-us/services/application-insights/
-# application_insights:
-
-# Post widgets & FB/VK comments settings.
-# ---------------------------------------------------------------
-# Facebook SDK Support.
-# https://github.com/iissnan/hexo-theme-next/pull/410
-facebook_sdk:
-  enable:       false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
-
-# Facebook comments plugin
-# This plugin depends on Facebook SDK.
-# If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
-facebook_comments_plugin:
-  enable:       false
-  num_of_posts: 10    # min posts num is 1
-  width:        100%  # default width is 550px
-  scheme:       light # default scheme is light (light or dark)
-
-# VKontakte API Support.
-# To get your AppID visit https://vk.com/editapp?act=create
-vkontakte_api:
-  enable:       false
-  app_id:       #<app_id>
-  like:         true
-  comments:     true
-  num_of_posts: 10
-
-# Star rating support to each article.
-# To get your ID visit https://widgetpack.com
-rating:
-  enable: false
-  id:     #<app_id>
-  color:  fc6423
-# ---------------------------------------------------------------
-
+##### 文章访问量统计
+``` ymal
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
@@ -1027,7 +963,9 @@ firestore:
   apiKey: #required
   projectId: #required
   bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
-
+```
+##### 访客统计
+``` ymal
 # 访客统计
 # Show Views/Visitors of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -1039,47 +977,9 @@ busuanzi_count:
   total_views_icon: eye
   post_views: false #避免与leanclound_visitors冲突
   post_views_icon: eye
-
-
-# Tencent analytics ID
-# tencent_analytics:
-
-# Tencent MTA ID
-# tencent_mta:
-
-
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: true
-
-# Google Calendar
-# Share your recent schedule to others via calendar page
-#
-# API Documentation:
-# https://developers.google.com/google-apps/calendar/v3/reference/events/list
-calendar:
-  enable: false
-  calendar_id: <required>
-  api_key: <required>
-  orderBy: startTime
-  offsetMax: 24
-  offsetMin: 4
-  timeZone:
-  showDeleted: false
-  singleEvents: true
-  maxResults: 250
-
-# Algolia Search
-# See: https://github.com/theme-next/hexo-theme-next/blob/master/docs/ALGOLIA-SEARCH.md
-# Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
-algolia_search:
-  enable: false
-  hits:
-    per_page: 10
-  labels:
-    input_placeholder: Search for Posts
-    hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
-
+```
+##### 站内搜索
+``` ymal
 # Local search 站内搜索
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
@@ -1091,7 +991,9 @@ local_search:
   top_n_per_article: 1
   # unescape html strings to the readable one
   unescape: false
-
+```
+##### 书签支持
+``` ymal
 # Bookmark Support
 # Dependencies: https://github.com/theme-next/theme-next-bookmark
 bookmark:
@@ -1101,241 +1003,14 @@ bookmark:
   #   - or clicking the bookmark-icon
   # if manual, only save it by clicking the bookmark-icon
   save: auto
-
-
-# ---------------------------------------------------------------
-# Tags Settings
-# ---------------------------------------------------------------
-
-# External URL with BASE64 encrypt & decrypt.
-# Usage: {% exturl text url "title" %}
-# Alias: {% extlink text url "title" %}
-exturl: false
-
-# Note tag (bs-callout).
-note:
-  # Note tag style values:
-  #  - simple    bs-callout old alert style. Default.
-  #  - modern    bs-callout new (v2-v3) alert style.
-  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
-  #  - disabled  disable all CSS styles import of note tag.
-  style: simple
-  icons: false
-  border_radius: 3
-  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
-  # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
-
-# Label tag.
-label: true
-
-# Tabs tag.
-tabs:
-  enable: true
-  transition:
-    tabs: false
-    labels: true
-  border_radius: 0
-
+```
+##### 阅读进度显示
+``` ymal
 # Reading progress bar
 # Dependencies: https://github.com/theme-next/theme-next-reading-progress
 reading_progress:
   enable: true
   color: "#37c6c0"
   height: 2px
-
-
-#! ---------------------------------------------------------------
-#! DO NOT EDIT THE FOLLOWING SETTINGS
-#! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! ---------------------------------------------------------------
-
-# Use velocity to animate everything.
-motion:
-  enable: true
-  async: false
-  transition:
-    # Transition variants:
-    # fadeIn | fadeOut | flipXIn | flipXOut | flipYIn | flipYOut | flipBounceXIn | flipBounceXOut | flipBounceYIn | flipBounceYOut
-    # swoopIn | swoopOut | whirlIn | whirlOut | shrinkIn | shrinkOut | expandIn | expandOut
-    # bounceIn | bounceOut | bounceUpIn | bounceUpOut | bounceDownIn | bounceDownOut | bounceLeftIn | bounceLeftOut | bounceRightIn | bounceRightOut
-    # slideUpIn | slideUpOut | slideDownIn | slideDownOut | slideLeftIn | slideLeftOut | slideRightIn | slideRightOut
-    # slideUpBigIn | slideUpBigOut | slideDownBigIn | slideDownBigOut | slideLeftBigIn | slideLeftBigOut | slideRightBigIn | slideRightBigOut
-    # perspectiveUpIn | perspectiveUpOut | perspectiveDownIn | perspectiveDownOut | perspectiveLeftIn | perspectiveLeftOut | perspectiveRightIn | perspectiveRightOut
-    post_block: fadeIn
-    post_header: slideDownIn
-    post_body: slideDownIn
-    coll_header: slideLeftIn
-    # Only for Pisces | Gemini.
-    sidebar: slideUpIn
-
-# Fancybox. There is support for old version 2 and new version 3.
-# Please, choose only any one variant, do not need to install both.
-# For install 2.x: https://github.com/theme-next/theme-next-fancybox
-# For install 3.x: https://github.com/theme-next/theme-next-fancybox3
-fancybox: false
-
-# Added switch option for separated repo in 6.0.0.
-# Dependencies: https://github.com/theme-next/theme-next-fastclick
-fastclick: false
-
-# Added switch option for separated repo in 6.0.0.
-# Dependencies: https://github.com/theme-next/theme-next-jquery-lazyload
-lazyload: false
-
-# Progress bar in the top during page loading.
-# Dependencies: https://github.com/theme-next/theme-next-pace
-pace: false
-# Themes list:
-#pace-theme-big-counter
-#pace-theme-bounce
-#pace-theme-barber-shop
-#pace-theme-center-atom
-#pace-theme-center-circle
-#pace-theme-center-radar
-#pace-theme-center-simple
-#pace-theme-corner-indicator
-#pace-theme-fill-left
-#pace-theme-flash
-#pace-theme-loading-bar
-#pace-theme-mac-osx
-#pace-theme-minimal
-# For example
-# pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-minimal
-
-# Canvas-nest
-# Dependencies: https://github.com/theme-next/theme-next-canvas-nest
-canvas_nest: false
-
-# JavaScript 3D library.
-# Dependencies: https://github.com/theme-next/theme-next-three
-# three_waves
-three_waves: false
-# canvas_lines
-canvas_lines: false
-# canvas_sphere
-canvas_sphere: false
-
-# Only fit scheme Pisces
-# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
-# Canvas-ribbon
-# size: The width of the ribbon.
-# alpha: The transparency of the ribbon.
-# zIndex: The display level of the ribbon.
-canvas_ribbon:
-  enable: false
-  size: 300
-  alpha: 0.6
-  zIndex: -1
-
-# Script Vendors.
-# Set a CDN address for the vendor you want to customize.
-# For example
-#    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
-# Be aware that you should use the same version as internal ones to avoid potential problems.
-# Please use the https protocol of CDN files when you enable https on your site.
-vendors:
-  # Internal path prefix. Please do not edit it.
-  _internal: lib
-
-  # Internal version: 2.1.3
-  jquery:
-
-  # Internal version: 2.1.5
-  # See: http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
-
-  # Internal version: 1.0.6
-  # See: https://github.com/ftlabs/fastclick
-  fastclick:
-
-  # Internal version: 1.9.7
-  # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
-
-  # Internal version: 1.2.1
-  # See: http://VelocityJS.org
-  velocity:
-
-  # Internal version: 1.2.1
-  # See: http://VelocityJS.org
-  velocity_ui:
-
-  # Internal version: 0.7.9
-  # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
-
-  # Internal version: 4.6.2
-  # See: http://fontawesome.io/
-  fontawesome:
-
-  # Internal version: 1
-  # https://www.algolia.com
-  algolia_instant_js:
-  algolia_instant_css:
-
-  # Internal version: 1.0.2
-  # See: https://github.com/HubSpot/pace
-  # Or use direct links below:
-  # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
-  # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
-  pace:
-  pace_css:
-
-  # Internal version: 1.0.0
-  # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
-
-  # Internal version: 1.0.0
-  # See: https://github.com/theme-next/theme-next-three
-  # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js
-  # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three-waves.min.js
-  # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_lines.min.js
-  # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js
-  three:
-  three_waves:
-  canvas_lines:
-  canvas_sphere:
-
-  # Internal version: 1.0.0
-  # https://github.com/zproo/canvas-ribbon
-  canvas_ribbon:
-
-  # Internal version: 3.3.0
-  # https://github.com/ethantw/Han
-  Han:
-
-  # Internal version: 3.3.0
-  # https://github.com/vinta/pangu.js
-  pangu:
-
-  # needMoreShare2
-  # https://github.com/revir/need-more-share2
-  needmoreshare2_js:
-  needmoreshare2_css:
-
-  # bookmark
-  # Internal version: 1.0.0
-  # https://github.com/theme-next/theme-next-bookmark
-  bookmark: true
-
-  # reading_progress
-  # Internal version: 1.0
-  # https://github.com/theme-next/theme-next-reading-progress
-  # Example: https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
-  reading_progress:
-
-  # valine comment
-  # Example: https://cdn.jsdelivr.net/npm/valine@1.1.8/dist/Valine.min.js
-  valine:
-
-
-# Assets
-css: css
-js: js
-images: images
 ```
-
 至此，GHN方案建站的流程介绍完了。如有疑问欢迎交流。
