@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="第4课 完善班级课程表, IT达摩院">
+    <meta name="description" content="🎦看课程视频:mega:本课介绍以下内容
+设置行高
+设置列宽
+调整表格对齐方式
+表格打印
+
+把课程表输出打印之前，为了尽可能的利用纸张页面，同时确保表格在页面局中显得协调美观，需要调整页面方向和设置表格的行高和列宽。
+:rainbow:作">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>第4课 完善班级课程表 | IT达摩院</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32-itdamo.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo-itdamo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">IT达摩院</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo-itdamo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">IT达摩院</div>
+        <div class="logo-desc">
+            
+            不忘初心前行 匠心独具辉煌
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"><a href="#!" class="tooltipped" target="_blank" data-tooltip="微信公众号：IT达摩院" data-position="top" data-delay="50">
+    <i class="fa fa-weixin"></i>
+</a>
+<a href="mailto:3043292995@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 3043292995" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        第4课 完善班级课程表
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/小学信息技术/" target="_blank">
+                    <span class="chip bg-color">小学信息技术</span>
+                </a>
+                
+                <a href="/tags/word/" target="_blank">
+                    <span class="chip bg-color">word</span>
+                </a>
+                
+                <a href="/tags/办公软件/" target="_blank">
+                    <span class="chip bg-color">办公软件</span>
+                </a>
+                
+                <a href="/tags/第4册/" target="_blank">
+                    <span class="chip bg-color">第4册</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/小学信息技术/" class="post-category" target="_blank">
+                        小学信息技术
+                    </a>
+                    
+                    <a href="/categories/小学信息技术/电子课本/" class="post-category" target="_blank">
+                        电子课本
+                    </a>
+                    
+                    <a href="/categories/小学信息技术/电子课本/第4册/" class="post-category" target="_blank">
+                        第4册
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-03-20
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="🎦看课程视频"><a href="#🎦看课程视频" class="headerlink" title="🎦看课程视频"></a>🎦<a href="https://itdamo.ke.qq.com/" target="_blank" rel="noopener">看课程视频</a></h2><h2 id="mega-本课介绍以下内容"><a href="#mega-本课介绍以下内容" class="headerlink" title=":mega:本课介绍以下内容"></a>:mega:本课介绍以下内容</h2><ul>
+<li>设置行高</li>
+<li>设置列宽</li>
+<li>调整表格对齐方式</li>
+<li>表格打印</li>
+</ul>
+<p>把课程表输出打印之前，为了尽可能的利用纸张页面，同时确保表格在页面局中显得协调美观，需要调整页面方向和设置表格的行高和列宽。</p>
+<h2 id="rainbow-作品展示"><a href="#rainbow-作品展示" class="headerlink" title=":rainbow:作品展示"></a>:rainbow:作品展示</h2><p><img src="/courses/ITP4/4.15.png" alt=""></p>
+<a id="more"></a>
+<h2 id="electric-plug-学一学"><a href="#electric-plug-学一学" class="headerlink" title=":electric_plug:学一学"></a>:electric_plug:学一学</h2><h3 id="设置页面方向"><a href="#设置页面方向" class="headerlink" title="设置页面方向"></a>设置页面方向</h3><h4 id="1-打开文件"><a href="#1-打开文件" class="headerlink" title="1.打开文件"></a>1.打开文件</h4><p>运行Word软件，打开<a href="https://github.com/goshinh/goshinh.github.io/raw/master/courses/ITP4/%E7%AC%AC4%E8%AF%BE%E7%B4%A0%E6%9D%90-%E5%9B%9B%EF%BC%881%EF%BC%89%E7%8F%AD%E8%AF%BE%E7%A8%8B%E8%A1%A8.doc" target="_blank" rel="noopener">第4课素材-四（1）班课程表</a></p>
+<h4 id="2-设置页面方向"><a href="#2-设置页面方向" class="headerlink" title="2.设置页面方向"></a>2.设置页面方向</h4><p>比较表格长和宽，我们很容易发现表格的长度大于宽度，所以页面的方向调整为<code>纵向</code>比较合适。（默认的纸张类型为A4）<br><img src="/courses/ITP4/4.2.png" alt=""></p>
+<p>执行<code>文件</code>——&gt;<code>页面设置</code>——&gt;方向设置为<code>纵向</code>，点击<code>确定</code>。<br>效果如下图所示：<br><img src="/courses/ITP4/4.3.png" alt=""></p>
+<h3 id="设置表格居中"><a href="#设置表格居中" class="headerlink" title="设置表格居中"></a>设置表格居中</h3><p>执行<code>表格——&gt;表格属性</code>命令，在弹出的<code>表格属性</code>对话框中，设置对其方式为<code>居中</code>，点击<code>确定</code>。如下图所示:<br><img src="/courses/ITP4/4.4.png" alt=""></p>
+<h3 id="设置行高"><a href="#设置行高" class="headerlink" title="设置行高"></a>设置行高</h3><p>设置行高遵循<code>先整体后局部</code>的思想，会使我们效率大大提高。</p>
+<h4 id="1-调整最后一行行高"><a href="#1-调整最后一行行高" class="headerlink" title="1.调整最后一行行高"></a>1.调整最后一行行高</h4><p>移动鼠标指针到最后一行的边缘，当指针变成<img src="/courses/ITP4/4.6.png" alt="">形状时，按住鼠标左键向下拖动至合适位置。<br><img src="/courses/ITP4/4.7.png" alt=""></p>
+<h4 id="2-平均分布各行"><a href="#2-平均分布各行" class="headerlink" title="2.平均分布各行"></a>2.平均分布各行</h4><p>选中整个表格，右击，在弹出的快捷菜单中，选择<code>平均分布各行</code>。如下图所示：<br><img src="/courses/ITP4/4.8.png" alt=""></p>
+<h4 id="3-微调部分行的高度"><a href="#3-微调部分行的高度" class="headerlink" title="3.微调部分行的高度"></a>3.微调部分行的高度</h4><p>为了突出标题行，一般使标题行的高度略高于平均值。移动鼠标指针到标题行的边缘，当指针变成<img src="/courses/ITP4/4.6.png" alt="">形状时，按住鼠标左键向下拖动至<br>合适高度即可。<br><img src="/courses/ITP4/4.10.png" alt=""></p>
+<h3 id="设置列宽"><a href="#设置列宽" class="headerlink" title="设置列宽"></a>设置列宽</h3><p>设置列宽同样遵循<code>先整体后局部</code>的思想，方法可参考“设置行高”</p>
+<h4 id="1-调整最右列列宽"><a href="#1-调整最右列列宽" class="headerlink" title="1.调整最右列列宽"></a>1.调整最右列列宽</h4><p>移动鼠标指针到最后一列的边缘，当指针变成<img src="/courses/ITP4/4.5.png" alt="">形状时，按住鼠标左键向右拖动至合适位置。<br><img src="/courses/ITP4/4.11.png" alt=""></p>
+<h4 id="2-平均分布各列"><a href="#2-平均分布各列" class="headerlink" title="2.平均分布各列"></a>2.平均分布各列</h4><p>选中整个表格，右击，在弹出的快捷菜单中，选择<code>平均分布各列</code>。如下图所示：<br><img src="/courses/ITP4/4.12.png" alt=""></p>
+<h4 id="3-微调部分列的列宽"><a href="#3-微调部分列的列宽" class="headerlink" title="3.微调部分列的列宽"></a>3.微调部分列的列宽</h4><p>为了标题列（第一列）紧凑些，我们需要使标题列的宽度略底于平均值。移动鼠标指针到标题行的边缘，当指针变成<img src="/courses/ITP4/4.5.png" alt="">形状时，按住鼠标左键向左拖动至合适位置即可。<br><img src="/courses/ITP4/4.13.png" alt=""></p>
+<h4 id="4-平均分布其他列"><a href="#4-平均分布其他列" class="headerlink" title="4.平均分布其他列"></a>4.平均分布其他列</h4><p>如果你调整了标题列，为此你可能还要再次平均分布各列（除了标题列）最终效果如下图：<br><img src="/courses/ITP4/4.14.png" alt=""></p>
+<h4 id="5-保存文件"><a href="#5-保存文件" class="headerlink" title="5.保存文件"></a>5.保存文件</h4><p>执行<code>文件——&gt;另存为</code>命令，给文件取个有意义的名称，点击”保存“，并关闭Word软件。</p>
+<p>为了便于阅读，<code>保存</code>总是作为最后一步出现，但是大家在实际的操作过程中应养成随时保存的习惯。</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="www.itdamo.org" class="b-link-green">IT达摩院</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/03/20/itp4/2018-03-20-lesson4/" class="b-link-green">第4课 完善班级课程表</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/03/22/itp4/2018-03-22-unit1summary/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第1单元小结">
+                        
+                        <span class="card-title">第1单元小结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">🎦看课程视频:books:单元小结在认识表格的作用和结构后，通过“建立”、“编辑”、“美化”、“完善”班级课程表，初步掌握了Word的表格制作本领。
+:pencil2:单元测试在这一单元中，你完成了哪些学习任务？你有哪些收获和体会？
+这是</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-03-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/小学信息技术/" class="post-category" target="_blank">
+                                    小学信息技术
+                                </a>
+                            
+                            <a href="/categories/小学信息技术/电子课本/" class="post-category" target="_blank">
+                                    电子课本
+                                </a>
+                            
+                            <a href="/categories/小学信息技术/电子课本/第4册/" class="post-category" target="_blank">
+                                    第4册
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/小学信息技术/" target="_blank">
+                        <span class="chip bg-color">小学信息技术</span>
+                    </a>
+                    
+                    <a href="/tags/word/" target="_blank">
+                        <span class="chip bg-color">word</span>
+                    </a>
+                    
+                    <a href="/tags/办公软件/" target="_blank">
+                        <span class="chip bg-color">办公软件</span>
+                    </a>
+                    
+                    <a href="/tags/第4册/" target="_blank">
+                        <span class="chip bg-color">第4册</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/03/20/itp4/2018-03-20-lesson3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="第3课 美化班级课程表">
+                        
+                        <span class="card-title">第3课 美化班级课程表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">🎦看课程视频:mega:本课介绍以下内容
+设置文字格式
+填充底纹
+修饰表格边框
+
+编辑好课程表之后，为使课程表的条理更加清晰，需要对课程表进行美化。例如，设置表格文字的格式，修饰表格的边框，填充底纹效果等。
+:rainbow:作品展示
+
+</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-03-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/小学信息技术/" class="post-category" target="_blank">
+                                    小学信息技术
+                                </a>
+                            
+                            <a href="/categories/小学信息技术/电子课本/" class="post-category" target="_blank">
+                                    电子课本
+                                </a>
+                            
+                            <a href="/categories/小学信息技术/电子课本/第4册/" class="post-category" target="_blank">
+                                    第4册
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/小学信息技术/" target="_blank">
+                        <span class="chip bg-color">小学信息技术</span>
+                    </a>
+                    
+                    <a href="/tags/word/" target="_blank">
+                        <span class="chip bg-color">word</span>
+                    </a>
+                    
+                    <a href="/tags/办公软件/" target="_blank">
+                        <span class="chip bg-color">办公软件</span>
+                    </a>
+                    
+                    <a href="/tags/第4册/" target="_blank">
+                        <span class="chip bg-color">第4册</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="#!" class="tooltipped" target="_blank" data-tooltip="微信公众号：IT达摩院" data-position="top" data-delay="50">
+    <i class="fa fa-weixin"></i>
+</a>
+<a href="mailto:3043292995@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 3043292995" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
