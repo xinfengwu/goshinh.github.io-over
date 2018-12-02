@@ -1,18 +1,13 @@
 ---
-title: 第课 键入标题
-permalink: /courses/14-IT-Primary-4-version4/LessonX/
-author_profile: false
-created_at: 
-last_modified_at: 
-toc: true
-toc_label: "本课目录"
-toc_icon: "cog"
-sidebar:
-  nav: "ITPLevel-4"
-layouts_gallery:
-  - url: /courses/ITP4/x.x.png
-    image_path: /courses/ITP4/x.x.png
-    alt: "本课作品展示"
+title: {{ title }}
+date: {{ date }}
+updated: 2018//
+categories:
+- 小学信息技术
+- 电子课本
+- 第册
+tag: 
+- 小学信息技术
 ---
 
 ## :cinema:[看课程视频](http://study.163.com)

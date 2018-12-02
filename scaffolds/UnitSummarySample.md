@@ -1,14 +1,13 @@
 ---
-title: 单元小结
-permalink: /courses/14-IT-Primary-4-version4/UnitXSummary/
-author_profile: false
-created_at: 2018-03-22
-last_modified_at: 2018-03-22
-toc: true
-toc_label: "本课目录"
-toc_icon: "cog"
-sidebar:
-  nav: "ITPLevel-4"
+title: 第单元小结
+date: 2018//
+updated: 2018//
+categories:
+- 小学信息技术
+- 电子课本
+- 第册
+tag: 
+- 小学信息技术
 ---
 ## :cinema:[看课程视频](http://study.163.com)
 
